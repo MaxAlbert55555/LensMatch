@@ -1,146 +1,332 @@
-/* comfortaa-300 - latin */
+/* kanit-100 - latin */
 @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Comfortaa';
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 100;
+    src: url('/fonts/kanit-v15-latin-100.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* kanit-100italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Kanit';
+    font-style: italic;
+    font-weight: 100;
+    src: url('/fonts/kanit-v15-latin-100italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* kanit-200 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 200;
+    src: url('/fonts/kanit-v15-latin-200.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* kanit-200italic - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Kanit';
+    font-style: italic;
+    font-weight: 200;
+    src: url('/fonts/kanit-v15-latin-200italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* kanit-300 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Kanit';
     font-style: normal;
     font-weight: 300;
-    src: url('/fonts/comfortaa-v45-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('/fonts/kanit-v15-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
-  /* comfortaa-regular - latin */
+  /* kanit-300italic - latin */
   @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Comfortaa';
+    font-family: 'Kanit';
+    font-style: italic;
+    font-weight: 300;
+    src: url('/fonts/kanit-v15-latin-300italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* kanit-regular - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Kanit';
     font-style: normal;
     font-weight: 400;
-    src: url('/fonts/comfortaa-v45-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('/fonts/kanit-v15-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
-  /* comfortaa-500 - latin */
+  /* kanit-italic - latin */
   @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Comfortaa';
+    font-family: 'Kanit';
+    font-style: italic;
+    font-weight: 400;
+    src: url('/fonts/kanit-v15-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* kanit-500 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Kanit';
     font-style: normal;
     font-weight: 500;
-    src: url('/fonts/comfortaa-v45-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('/fonts/kanit-v15-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
-  /* comfortaa-600 - latin */
+  /* kanit-500italic - latin */
   @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Comfortaa';
+    font-family: 'Kanit';
+    font-style: italic;
+    font-weight: 500;
+    src: url('/fonts/kanit-v15-latin-500italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* kanit-600 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Kanit';
     font-style: normal;
     font-weight: 600;
-    src: url('/fonts/comfortaa-v45-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url('/fonts/kanit-v15-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
-  /* comfortaa-700 - latin */
+  /* kanit-600italic - latin */
   @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Comfortaa';
-    font-style: normal;
-    font-weight: 700;
-    src: url('/fonts/comfortaa-v45-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    font-family: 'Kanit';
+    font-style: italic;
+    font-weight: 600;
+    src: url('/fonts/kanit-v15-latin-600italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
-:root{
-    --classic:#fff;
-    --red:#b25557;
-    --yellow:#fbd67d;
-    --yellow-rgb:251, 214, 125;
-    --brown:#422b23;
-    --whiterock:#fbf6de;
-    --green:#dfe6cf;
-    --standard: 1rem;
-    --small: 0.9rem;
-    --smaller:0.8rem;
-    --middle:1.1rem;
-    --big:1.4rem;
-    --bigger:1.8rem;
-    --biggest:2.4rem;
-    --space-xs:20px;
-    --space-xl:40px;
-    --duration:30s;
-}
-  
-* {
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body, html {
-    width:100%;
-    height: 100%;
-    scroll-behavior: smooth;
-    font-size: 16px;
 
-}
 body {
-    margin: 0;
-    font-family: 'Comfortaa', Verdana, Arial, Helvetica, serif;
-    font-style: normal;
-    font-weight:300;
-    background: linear-gradient(to bottom, rgb(82, 82, 82), rgb(21, 21, 21));
-}
-.container-1 {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 3fr 5fr;
-    grid-template-rows: auto;
-    height: 75%;
-    overflow: hidden;
-    position: relative;
+    font-family: Kanit, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #333;
+    color: #fff;
+    width:100%;
+    height:100%;
 }
 
-.left, .right {
-    height: 100%;
-    position: relative;
-    padding: 20px;
-    text-align: center;
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container1 {
+    display: flex;
+    height: 70%;
+    background: #060606;
+    overflow: hidden;
+    border-bottom: solid 2px #666;
+    border-radius:0 0 20px 20px;
 }
 
 .left {
-    padding: 0;
-}
-
-#model-container {
-    width: 100%;
-    height: 100%;
+    flex: 3;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background: radial-gradient(circle at 25% 30%, #88f3ffe6, rgba(0, 0, 0, 0) 70%);
 }
 
 .right {
+    flex: 4;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layer {
+    position: absolute;
+    width: 80%;
+    max-width: 700px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: solid 3px #22cce0;
+}
+
+.layer.background {
+    background: url('/images/bastei.jpg') center/cover;
+    z-index: 1;
+}
+
+.layer.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.layer.highlight {
+    background: url('/images/bastei.jpg') center/cover;
+    clip-path: inset(20% 10%);
+    -webkit-clip-path: inset(20% 10%);
+    z-index: 3;
+}
+
+.container2 {
+    height: 30%;
+    background: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.third {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-third {
+    flex: 38.5%;
+    border-right: 1px solid #444;
+}
+
+.middle-third {
+    flex: 38.5%;
+    border-right: 1px solid #444;
+}
+
+.group {
     display: flex;
     align-items: center;
+    margin-bottom: 8px;
+    position: relative;
+}
+.calculate h3{
+    left:-70px;
+    position: relative;
+}
+
+label {
+    font-size: 0.9rem;
+    width: 38%;
+    text-align: right;
+    color: #9f9f9f;
+}
+
+input.result, select {
+    font-size: 0.75rem;
+    padding: 4px 0 ;
+    text-align: center;
+    margin:0 8px;
+    width: 23%;
+    background-color: #555;
+    border: none;
+    color: #9f9f9f;
+}
+
+input.result:focus, select:focus {
+    outline: none;
+    outline: 1px solid #22cce0;
+    background-color: #333;
+    color:#22cce0;
+}
+
+.border-bottom{
+    border-radius:0 0 7px 7px;
+}
+.border-top{
+    border-radius:7px 7px 0 0;
+}
+.block {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 50%;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #555;
+    border-radius: 0px;
+    height: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -3.5px;
+    background-color: #9f9f9f;
+    border-radius: 10px;
+    height: 9px;
+    width: 9px;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+    outline: 2px solid #22cce0;
+    outline-offset: 0.1rem;
+}
+
+input[type="range"]::-moz-range-track {
+    background-color: #555;
+    border-radius: 0px;
+    height: 2px;
+}
+
+input[type="range"]::-moz-range-thumb {
+    background-color: #9f9f9f;
+    border: none;
+    border-radius: 10px;
+    height: 9px;
+    width: 9px;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+    outline: 3px solid #22cce0;
+    outline-offset: 0.125rem;
+}
+
+.right-third {
+    flex: 23%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
-.circle-window {
-    width: 80%;
-    height: 0;
-    padding-bottom: 80%; /* Quadrat mit Höhe auf Basis der Breite */
-    background-image: url(/images/bastei.jpg);
-    background-position: center;
-    background-size: cover;
-    border-radius: 50%;
-    overflow: hidden;
-    position: absolute;
-    right:10%;
-    box-shadow:inset  0px 0px 25px rgb(0, 0, 0);
-}
-.container-2 {
+.calculation {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
     width: 100%;
-    display: grid;
-    grid-template-columns: 2fr 2fr 2fr;
-    grid-template-rows: auto;
-    overflow: hidden;
-    position: relative;
-    gap:10px;
-    padding:10px;
-}
-.item{
-    padding:10px;
-    background-color:var(--red);
+    padding: 0 20px;
+    color: #9f9f9f;
 }
 
+.calculation .left-column {
+    text-align: right;
+    flex: 0 0 auto;
+    padding-right: 20px;
+}
 
+.calculation .right-column {
+    text-align: left;
+    flex: 0 0 auto;
+}
 
-  
-  
+.calculation p {
+    margin: 5px 0;
+}
 
-
-
+/* 3D-Objekt */
+#lensCanvas {
+    width: 80%;
+    height: 90%;
+    display: block;
+}
