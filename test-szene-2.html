@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blender Scene Viewer</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/OrbitControls.js"></script>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: white;
+    }
+    #info {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid #ccc;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div id="info">
+    <p><b>Camera Position:</b> <span id="camera-position">Loading...</span></p>
+    <p><b>Camera Rotation:</b> <span id="camera-rotation">Loading...</span></p>
+  </div>
+  <script>
+    // Benutzerdefinierte Kameraeinstellungen
+    const cropFactor = 1.0; // Cropfaktor (z. B. 1.0 für Vollformat, 1.5 für APS-C)
+    const aspectRatio = 16 / 9; // Seitenformat (z. B. 16:9)
+    const fieldOfView = 50; // Bildkegel in mm
+    const focalLength = 50; // Brennweite in mm
+    const aperture = 8.8; // Blendenwert (f/2.8)
+  
+    // Szene, Kamera, Renderer
+    const scene = new THREE.Scene();
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setClearColor(0x008eff); // Blauer Himmel
+    renderer.shadowMap.enabled = true; // Schatten aktivieren
+    document.body.appendChild(renderer.domElement);
+  
+    let camera; // Kamera wird dynamisch definiert
+  
+    // Beleuchtung
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1);
+    scene.add(ambientLight);
+  
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+    directionalLight.position.set(5, 10, 5);
+    directionalLight.castShadow = true;
+    directionalLight.shadow.mapSize.width = 2048; // Schattenauflösung erhöhen
+    directionalLight.shadow.mapSize.height = 2048;
+    directionalLight.shadow.camera.near = 0.5;
+    directionalLight.shadow.camera.far = 50;
+    scene.add(directionalLight);
+  
+    const additionalLight = new THREE.PointLight(0xffffff, 10, 0);
+    additionalLight.position.set(0, 5, 5);
+    scene.add(additionalLight);
+  
+    const sunLight = new THREE.DirectionalLight(0xffdd88, 1.5);
+    sunLight.position.set(10, 50, -10);
+    sunLight.castShadow = true;
+    sunLight.shadow.mapSize.width = 2048; // Schattenauflösung erhöhen
+    sunLight.shadow.mapSize.height = 2048;
+    sunLight.shadow.camera.near = 0.5;
+    sunLight.shadow.camera.far = 100;
+    scene.add(sunLight);
+  
+    // GLTFLoader für das Laden der 3D-Szene
+    const loader = new THREE.GLTFLoader();
+    loader.load(
+      '/3D-Objekte/3D-Szene/szene.glb',
+      (gltf) => {
+        const blenderScene = gltf.scene;
+        blenderScene.traverse((node) => {
+          if (node.isMesh) {
+            node.castShadow = true;
+            node.receiveShadow = true;
+          }
+        });
+        scene.add(blenderScene);
+  
+        console.log('GLTF-Szene geladen. Objekte:', blenderScene);
+  
+        // Kamera definieren
+        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.aspect = aspectRatio; // Seitenverhältnis setzen
+        camera.position.set(-2.01, 0.32, 3.32);
+  
+        const euler = new THREE.Euler(
+          THREE.MathUtils.degToRad(0),
+          THREE.MathUtils.degToRad(-17.5),
+          THREE.MathUtils.degToRad(0),
+          'XYZ'
+        );
+        camera.quaternion.setFromEuler(euler);
+  
+        scene.add(camera);
+  
+        // Funktion zur Anpassung der Brennweite
+        const setCameraFocalLength = (focalLength) => {
+          if (camera && focalLength > 0) {
+            const fov = (2 * Math.atan((fieldOfView / (2 * focalLength)))) * (180 / Math.PI); // Berechne FOV basierend auf Bildkegel und Brennweite
+            camera.fov = fov;
+            camera.updateProjectionMatrix();
+            console.log(`Brennweite gesetzt: ${focalLength}mm, berechnetes FOV: ${fov.toFixed(2)}°`);
+          }
+        };
+  
+        // Funktion zur Anpassung der Blende
+        const setCameraAperture = (aperture) => {
+          if (camera && aperture > 0) {
+            const focusDistance = 10; // Beispielwert: Fokusdistanz von 10 Einheiten
+            const coc = 0.03 / cropFactor; // Circle of Confusion, abhängig vom Cropfaktor
+            const hyperfocal = (focalLength * focalLength) / (aperture * coc) + focalLength;
+            const nearFocus = (focusDistance * (hyperfocal - focalLength)) / (hyperfocal + focusDistance - 2 * focalLength);
+            const farFocus = (focusDistance * (hyperfocal - focalLength)) / (hyperfocal - focusDistance);
+  
+            console.log(`Blende gesetzt: f/${aperture}, Fokusbereich: ${nearFocus.toFixed(2)} - ${farFocus.toFixed(2)}`);
+          }
+        };
+  
+        // Brennweite und Blende einstellen
+        setCameraFocalLength(focalLength);
+        setCameraAperture(aperture);
+  
+        console.log('Kamera-Setup abgeschlossen:', camera);
+  
+        // Animations-Schleife
+        const animate = () => {
+          requestAnimationFrame(animate);
+          renderer.render(scene, camera);
+          updateCameraInfo();
+        };
+        animate();
+      },
+      undefined,
+      (error) => {
+        console.error('Ein Fehler ist beim Laden der Blender-Szene aufgetreten:', error);
+      }
+    );
+  
+    // Kamera-Info aktualisieren
+    const updateCameraInfo = () => {
+      if (camera) {
+        document.getElementById('camera-position').innerText = `x: ${camera.position.x.toFixed(2)}, y: ${camera.position.y.toFixed(2)}, z: ${camera.position.z.toFixed(2)}`;
+        document.getElementById('camera-rotation').innerText = `x: ${THREE.MathUtils.radToDeg(camera.rotation.x).toFixed(2)}°, y: ${THREE.MathUtils.radToDeg(camera.rotation.y).toFixed(2)}°, z: ${THREE.MathUtils.radToDeg(camera.rotation.z).toFixed(2)}°`;
+      }
+    };
+  
+    window.addEventListener('resize', () => {
+      if (camera) {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+      }
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+        
+</body>
+</html>
