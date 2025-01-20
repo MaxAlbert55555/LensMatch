@@ -1,5 +1,41 @@
-# Vue 3 + Vite
+# Lensmatch
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Installation des Projektes
+1. Projekt von Github Clonen
+2. Im Terminal folgende Befehle eingeben:
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+```sh
+npm install
+``` 
+```sh
+npm run dev
+```
+
+*Voraussetzung ist node.js
+
+3. Ein Server wird erstellt und im Browser öffnet sich ein Fenster. Wenn nicht, bitte den Link aus dem Terminal im Browser eingeben
+
+## Nutzung des Projekts
+Das Projekt soll Objektive miteinander vergleichen. 
+Zur Zeit ist es noch nicht so ausgereift wie es sollte.
+Die Berechnungen sind physikalisch noch nicht korrekt. 
+
+Die Veränderung der Optik funktioniert leider erst nach einer weiteren Interaktion des Fensters. Es wird also leider nicht dynamisch live gerendert.
+
+### Optik zuverlässig anpassen
+In der Datei "threeScene.js" können folgenden Zeilen angepasst werden:
+
+```sh
+let focalLength = 50; Hier wird die Brennweite eingegeben z.B. 50 für 50mm
+```
+- Hier wird die Brennweite eingegeben z.B. 50 für 50mm
+
+```sh
+let aperture = 8; 
+```
+- Hier wird der Blendenwert in umgekehrter Reihenfolge eingegeben. Echter Blendenwert 8 -> 1, 1 -> 8
+
+```sh
+let focus = 5.729; 
+```
+- Fokus in mm. Nutze folgende Werte: 5.729 (Haus), 0.9337 (linkes von den 3 Fässern), 0.387 (liegendes Fass)

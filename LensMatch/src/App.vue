@@ -5,8 +5,8 @@
       <div class="left">
         <div class="lichtkegel">
           <img class="kegel" src="/public/images/Kegel_01.png" alt="Kegel">
-          <img class="kegelSensor ok" src="/public/images/Kegel_und_Sensor_01.png" alt="Kegel und Sensor">
-          <img class="kegelSensor nichtOk" src="/public/images/Kegel_und_Sensor_03.png" alt="Kegel und Sensor">
+          <img class="kegelSensor ok" src="/public/images/Kegel_v2/Kegel_und_Sensor_01.png" alt="Kegel und Sensor">
+          <img class="kegelSensor nichtOk" src="/public/images/Kegel_v2/Kegel_und_Sensor_02.png" alt="Kegel und Sensor">
         </div>
         <canvas id="lensCanvas"></canvas>
 

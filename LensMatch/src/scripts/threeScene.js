@@ -5,9 +5,9 @@ import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
 import { BokehPass } from "three/examples/jsm/postprocessing/BokehPass";
 
 // Zentrale Werte: Bildkegel, Brennweite, Blendenwert, Fokus
-let fieldOfView = 300; // Bildkegel in Grad
+let fieldOfView = 300; 
 let focalLength = 25; // Brennweite in mm
-let aperture = 8; // Blendenwert
+let aperture = 3; // Blendenwert
 let focus = 5.729; // Fokus in mm
 
 export const initializeThreeScene = (refs, data) => {
