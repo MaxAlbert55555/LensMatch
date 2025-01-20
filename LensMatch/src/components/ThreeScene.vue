@@ -10,6 +10,8 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
 import { BokehPass } from "three/examples/jsm/postprocessing/BokehPass";
+import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
+import { SepiaShader } from 'three/examples/jsm/shaders/SepiaShader';
 
 export default {
   name: "ThreeScene",
@@ -75,6 +77,11 @@ export default {
     sunLight.shadow.camera.near = 0.5;
     sunLight.shadow.camera.far = 100;
     scene.add(sunLight);
+
+    // SepiaShader: fügt den Sepia-Look hinzu
+    const sepiaPass = new ShaderPass(SepiaShader);
+    sepiaPass.uniforms['amount'].value = 0.5; // Sepia-Intensität (0.0 bis 1.0)
+    composer.addPass(sepiaPass);
 
     // GLTFLoader für das Laden der 3D-Szene
     const loader = new GLTFLoader();
