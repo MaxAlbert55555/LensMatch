@@ -26,7 +26,7 @@ Die Veränderung der Optik funktioniert leider erst nach einer weiteren Interakt
 In der Datei "threeScene.js" können folgenden Zeilen angepasst werden:
 
 ```sh
-let focalLength = 50; Hier wird die Brennweite eingegeben z.B. 50 für 50mm
+let focalLength = 50;
 ```
 - Hier wird die Brennweite eingegeben z.B. 50 für 50mm
 
