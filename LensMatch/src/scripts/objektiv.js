@@ -48,7 +48,7 @@ controls.enableZoom = false; // Verhindert das Zoomen mit der Maus
 controls.enablePan = false; // Verhindert das Verschieben der Szene
 
 // Begrenze die vertikale Drehung (Polarwinkel) auf einen Bereich von 45°
-controls.minPolarAngle = Math.PI / 3.5; // Minimaler Winkel (45°)
+controls.minPolarAngle = Math.PI / 4; // Minimaler Winkel (45°)
 controls.maxPolarAngle = Math.PI / 2.3; // Maximaler Winkel (90°)
 
 // Fokuspunkt der Kamera setzen (z. B. auf das Zentrum des Objektivs)
@@ -110,13 +110,13 @@ controls.update(); // Aktualisiere die OrbitControls
               child.material.roughness = 0.86;
               break;
             case "Glas": // Material: Glas
-              child.material.color = new THREE.Color(0xaaaaaa); 
-              child.material.metalness = 1;
-              child.material.roughness = 0.05;
-              child.material.opacity = 0.5; 
+              child.material.color = new THREE.Color(0x88f3ff); 
+              child.material.metalness = 0.95;
+              child.material.roughness = 0.1;
+              child.material.opacity = 0.7; 
               child.material.transparent = true; 
               child.material.side = THREE.DoubleSide; 
-              child.material.alphaTest = 0.1;
+              child.material.alphaTest = .5;
               child.material.depthWrite = false;
               break;
             case "Procedual Rough Metal":
